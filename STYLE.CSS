@@ -46,7 +46,9 @@ main{
 .left{
     font-size: 1.1rem;
 }
-
+.right{
+margin-right : 10px;
+}
 .firstsection{
     display: flex;
     justify-content: space-around;
