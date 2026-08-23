@@ -5,93 +5,333 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Blog Section - Portfolio</title>
+    <title>Blog | Prince Tiwari</title>
 
     <link rel="stylesheet" href="blog.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
 
 <body>
 
-<section class="blog-section" id="blog">
+<header class="site-header">
 
-    <div class="container">
+    <nav class="navbar">
 
-        <h2 class="section-title">
-            Our Latest Blog Posts
-        </h2>
+        <a href="index.html" class="logo">
+            Prince<span>.</span>
+        </a>
 
-        <div class="blog-posts">
+        <div class="nav-links">
 
-            <article class="blog-post">
+            <a href="index.html">
+                Home
+            </a>
 
-                <h3 class="post-title">
-                    Understanding Web Development Trends
-                </h3>
+            <a href="about.html">
+                About
+            </a>
 
-                <p class="post-date">
-                    December 29, 2024
-                </p>
+            <a href="services.html">
+                Services
+            </a>
 
-                <p class="post-description">
-                    Stay updated with the latest trends in web
-                    development and how they can impact your business.
-                </p>
+            <a href="blog.html" class="active">
+                Blog
+            </a>
 
-                <a href="blogRead.html" class="read-more-btn">
-                    Read More
-                </a>
-
-            </article>
-
-
-            <article class="blog-post">
-
-                <h3 class="post-title">
-                    The Importance of Responsive Design
-                </h3>
-
-                <p class="post-date">
-                    December 20, 2024
-                </p>
-
-                <p class="post-description">
-                    Learn why responsive design is essential for
-                    user experience and how to implement it.
-                </p>
-
-                <a href="#" class="read-more-btn">
-                    Read More
-                </a>
-
-            </article>
-
-
-            <article class="blog-post">
-
-                <h3 class="post-title">
-                    SEO Tips for Your Website
-                </h3>
-
-                <p class="post-date">
-                    December 10, 2024
-                </p>
-
-                <p class="post-description">
-                    Discover the best SEO practices to help your
-                    website rank higher in search results.
-                </p>
-
-                <a href="#" class="read-more-btn">
-                    Read More
-                </a>
-
-            </article>
+            <a href="contect.html">
+                Contact
+            </a>
 
         </div>
 
-    </div>
+    </nav>
 
-</section>
+</header>
+
+
+<main>
+
+    <section class="blog-hero">
+
+        <div class="hero-content">
+
+            <span class="hero-label">
+                <i class="fa-solid fa-pen-nib"></i>
+                MY BLOG
+            </span>
+
+            <h1>
+                Thoughts, Ideas &
+                <span>Web Development</span>
+            </h1>
+
+            <p>
+                Exploring web development, modern technologies,
+                programming concepts and everything I learn
+                along the way.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <section class="blog-section">
+
+        <div class="section-heading">
+
+            <div>
+                <span class="small-title">
+                    LATEST ARTICLES
+                </span>
+
+                <h2>
+                    From My <span>Desk</span>
+                </h2>
+            </div>
+
+            <p>
+                A collection of articles about development,
+                technology and the web.
+            </p>
+
+        </div>
+
+
+        <div class="blog-grid">
+
+
+            <article class="blog-card featured">
+
+                <div class="card-image">
+
+                    <img
+                        src="imageF/webdev.jpg"
+                        alt="Web Development">
+
+                    <span class="category">
+                        Web Development
+                    </span>
+
+                </div>
+
+
+                <div class="card-content">
+
+                    <div class="post-meta">
+
+                        <span>
+                            <i class="fa-regular fa-calendar"></i>
+                            Dec 29, 2024
+                        </span>
+
+                        <span>
+                            <i class="fa-regular fa-clock"></i>
+                            6 min read
+                        </span>
+
+                    </div>
+
+
+                    <h3>
+                        Understanding Web Development Trends
+                    </h3>
+
+
+                    <p>
+                        Explore the technologies and development
+                        trends that are shaping the modern web and
+                        changing how developers build applications.
+                    </p>
+
+
+                    <a
+                        href="blogRead.html"
+                        class="read-more">
+
+                        Read Article
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </a>
+
+                </div>
+
+            </article>
+
+
+
+            <article class="blog-card">
+
+                <div class="card-image">
+
+                    <img
+                        src="imageF/Future_Of_Responsive_Web_Design_12Grids.webp"
+                        alt="Responsive Web Design">
+
+                    <span class="category">
+                        Design
+                    </span>
+
+                </div>
+
+
+                <div class="card-content">
+
+                    <div class="post-meta">
+
+                        <span>
+                            <i class="fa-regular fa-calendar"></i>
+                            Dec 20, 2024
+                        </span>
+
+                        <span>
+                            <i class="fa-regular fa-clock"></i>
+                            5 min read
+                        </span>
+
+                    </div>
+
+
+                    <h3>
+                        The Importance of Responsive Design
+                    </h3>
+
+
+                    <p>
+                        Why responsive design matters and how
+                        developers can create websites that work
+                        beautifully across every screen size.
+                    </p>
+
+
+                    <a href="#" class="read-more">
+
+                        Read Article
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </a>
+
+                </div>
+
+            </article>
+
+
+
+            <article class="blog-card">
+
+                <div class="card-image">
+
+                    <img
+                        src="imageF/What_are_the_weather_features.png"
+                        alt="SEO">
+
+                    <span class="category">
+                        SEO
+                    </span>
+
+                </div>
+
+
+                <div class="card-content">
+
+                    <div class="post-meta">
+
+                        <span>
+                            <i class="fa-regular fa-calendar"></i>
+                            Dec 10, 2024
+                        </span>
+
+                        <span>
+                            <i class="fa-regular fa-clock"></i>
+                            4 min read
+                        </span>
+
+                    </div>
+
+
+                    <h3>
+                        SEO Tips for Your Website
+                    </h3>
+
+
+                    <p>
+                        Simple SEO practices every developer should
+                        understand to improve website visibility and
+                        search engine performance.
+                    </p>
+
+
+                    <a href="#" class="read-more">
+
+                        Read Article
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </a>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </section>
+
+
+    <section class="blog-cta">
+
+        <div class="cta-content">
+
+            <span>
+                HAVE AN IDEA?
+            </span>
+
+            <h2>
+                Let's build something
+                <strong>great.</strong>
+            </h2>
+
+            <p>
+                Have a project or just want to talk about
+                technology? Feel free to get in touch.
+            </p>
+
+            <a href="contect.html" class="cta-button">
+
+                Get In Touch
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    <p>
+        © 2026 Prince Tiwari. All Rights Reserved.
+    </p>
+
+</footer>
 
 </body>
 </html>
