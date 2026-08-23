@@ -1,72 +1,95 @@
-/* Reset some default styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
-  
-  body {
-    font-family: Arial, sans-serif;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    font-family: "Poppins", Arial, sans-serif;
     line-height: 1.6;
-    height: 100%;
-  }
-  
-  /* About Section */
-  .about-section {
-    background: url('https://images.squarespace-cdn.com/content/v1/5a4b6d1f9f07f5d01c10f2b6/1628103521142-DO2Y0W1DQ1KWAMJO3GXY/swpp20092-Edit-Edit.jpg?format=1500w') no-repeat center center/cover;
-    color: white;
-    padding: 100px 0;
-    text-align: center;
-    background-size: cover;
+}
+
+.about-section {
+    min-height: 100vh;
+    padding: 60px 20px;
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.55),
+            rgba(0, 0, 0, 0.55)
+        ),
+        url("https://images.squarespace-cdn.com/content/v1/5a4b6d1f9f07f5d01c10f2b6/1628103521142-DO2Y0W1DQ1KWAMJO3GXY/swpp20092-Edit-Edit.jpg?format=1500w");
+    background-repeat: no-repeat;
     background-position: center;
-    height: 100vh;
-  }
-  
-  .container {
-    width: 80%;
-    margin: 0 auto;
+    background-size: cover;
+    color: white;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100%;
-  }
-  
-  .content h2 {
-    font-size: 36px;
+    text-align: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
+}
+
+.content {
+    width: 100%;
+}
+
+.content h2 {
+    font-size: clamp(2rem, 6vw, 3rem);
     margin-bottom: 20px;
     font-weight: bold;
-  }
-  
-  .content p {
-    font-size: 18px;
+}
+
+.content p {
+    width: 100%;
     max-width: 800px;
     margin: 0 auto 30px;
-    line-height: 1.6;
-  }
-  
-  .cta-btn {
+    font-size: clamp(1rem, 2vw, 1.15rem);
+    line-height: 1.7;
+}
+
+.cta-btn {
+    display: inline-block;
     background-color: #28a745;
     color: white;
     padding: 12px 25px;
     text-decoration: none;
     border-radius: 5px;
     font-size: 18px;
-    transition: background-color 0.3s ease;
-  }
-  
-  .cta-btn:hover {
+    transition: 0.3s ease;
+}
+
+.cta-btn:hover {
     background-color: #218838;
-  }
-  
-  @media (max-width: 768px) {
+    transform: translateY(-2px);
+}
+
+@media (max-width: 600px) {
+    .about-section {
+        min-height: 100svh;
+        padding: 40px 20px;
+    }
+
     .content h2 {
-      font-size: 28px;
+        font-size: 2rem;
     }
-  
+
     .content p {
-      font-size: 16px;
-      padding: 0 20px;
+        font-size: 1rem;
     }
-  }
-  
+
+    .cta-btn {
+        font-size: 16px;
+        padding: 11px 22px;
+    }
+}
