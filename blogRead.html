@@ -5,36 +5,831 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Blog - Web Development Trends</title>
+    <title>Understanding Web Development Trends | Prince Tiwari</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
     <style>
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            background: #f4f4f4;
-            color: #333;
+            background: #000022;
+            color: white;
+            font-family: "Poppins", sans-serif;
             line-height: 1.8;
-            padding: 20px;
+            overflow-x: hidden;
         }
 
-        article {
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
             width: 100%;
-            max-width: 900px;
-            margin: 30px auto;
-            padding: 40px;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            display: block;
         }
 
-        h1 {
-            margin-bottom: 30px;
-            font-size: clamp(1.8rem, 5vw, 2.5rem);
+
+        .site-header {
+            width: 100%;
+
+            background: rgba(43, 43, 158, 0.95);
+
+            border-bottom:
+                1px solid rgba(255,255,255,0.08);
+        }
+
+        .navbar {
+            width: 90%;
+            max-width: 1250px;
+
+            min-height: 75px;
+
+            margin: auto;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 1.6rem;
+
+            font-weight: 700;
+        }
+
+        .logo span {
+            color: #ff3030;
+        }
+
+        .nav-links {
+            display: flex;
+
+            align-items: center;
+
+            gap: 32px;
+        }
+
+        .nav-links a {
+            position: relative;
+
+            color: white;
+
+            font-size: 0.95rem;
+
+            font-weight: 500;
+
+            transition: 0.3s ease;
+        }
+
+        .nav-links a::after {
+            content: "";
+
+            position: absolute;
+
+            width: 0;
+
+            height: 2px;
+
+            left: 0;
+
+            bottom: -8px;
+
+            background: #ff3030;
+
+            transition: 0.3s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #ff4040;
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+
+        .article-header {
+            width: 90%;
+            max-width: 1000px;
+
+            margin: auto;
+
+            padding: 100px 0 60px;
+        }
+
+        .category {
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            padding: 7px 14px;
+
+            background: rgba(255,48,48,0.12);
+
+            border: 1px solid rgba(255,48,48,0.3);
+
+            border-radius: 20px;
+
+            color: #ff4545;
+
+            font-size: 0.75rem;
+
+            font-weight: 600;
+
+            letter-spacing: 1px;
+        }
+
+        .article-header h1 {
+            max-width: 950px;
+
+            margin: 25px 0;
+
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+
+            line-height: 1.15;
+        }
+
+        .article-header h1 span {
+            color: #ff3030;
+        }
+
+        .article-intro {
+            max-width: 800px;
+
+            color: #9999aa;
+
+            font-size: 1.05rem;
+
+            line-height: 1.8;
+        }
+
+        .article-meta {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 25px;
+
+            margin-top: 30px;
+
+            color: #77778a;
+
+            font-size: 0.82rem;
+        }
+
+        .article-meta span {
+            display: flex;
+
+            align-items: center;
+
+            gap: 8px;
+        }
+
+        .article-meta i {
+            color: #ff3030;
+        }
+
+
+        .article-image {
+            width: 90%;
+            max-width: 1100px;
+
+            height: 500px;
+
+            margin: 20px auto 70px;
+
+            overflow: hidden;
+
+            border-radius: 18px;
+
+            border:
+                1px solid rgba(255,255,255,0.08);
+        }
+
+        .article-image img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+        }
+
+
+        .article-wrapper {
+            width: 90%;
+            max-width: 850px;
+
+            margin: auto;
+
+            padding-bottom: 100px;
+        }
+
+        .article-content {
+            color: #c2c2cf;
+
+            font-size: 1rem;
+
+            line-height: 1.9;
+        }
+
+        .article-content p {
+            margin-bottom: 25px;
+        }
+
+        .article-content h2 {
+            color: white;
+
+            font-size: 1.8rem;
+
+            margin: 55px 0 15px;
+
+            line-height: 1.4;
+
+            position: relative;
+
+            padding-left: 18px;
+        }
+
+        .article-content h2::before {
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+
+            top: 5px;
+
+            width: 4px;
+
+            height: calc(100% - 10px);
+
+            background: #ff3030;
+
+            border-radius: 5px;
+        }
+
+        .article-content strong {
+            color: white;
+        }
+
+
+        .article-footer {
+            width: 90%;
+            max-width: 850px;
+
+            margin: auto;
+
+            padding: 35px 0 70px;
+
+            border-top:
+                1px solid rgba(255,255,255,0.08);
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            gap: 20px;
+        }
+
+        .back-button {
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            padding: 11px 18px;
+
+            background: #ff3030;
+
+            border-radius: 7px;
+
+            font-size: 0.85rem;
+
+            font-weight: 600;
+
+            transition: 0.3s ease;
+        }
+
+        .back-button:hover {
+            background: #d91f1f;
+
+            transform: translateX(-3px);
+        }
+
+        .article-footer p {
+            color: #77778a;
+
+            font-size: 0.8rem;
+        }
+
+
+        footer {
+            padding: 30px 20px;
+
+            text-align: center;
+
+            background: #08081f;
+
+            border-top:
+                1px solid rgba(255,255,255,0.06);
+
+            color: #77778a;
+
+            font-size: 0.85rem;
+        }
+
+
+        @media (max-width: 700px) {
+
+            .navbar {
+                padding: 18px 0;
+
+                flex-direction: column;
+
+                gap: 18px;
+            }
+
+            .nav-links {
+                width: 100%;
+
+                justify-content: center;
+
+                flex-wrap: wrap;
+
+                gap: 12px 20px;
+            }
+
+            .nav-links a {
+                font-size: 0.82rem;
+            }
+
+            .article-header {
+                padding: 60px 0 40px;
+            }
+
+            .article-header h1 {
+                font-size: 2.3rem;
+            }
+
+            .article-intro {
+                font-size: 0.9rem;
+            }
+
+            .article-meta {
+                gap: 12px 20px;
+            }
+
+            .article-image {
+                height: 250px;
+
+                margin-bottom: 50px;
+
+                border-radius: 12px;
+            }
+
+            .article-wrapper {
+                padding-bottom: 60px;
+            }
+
+            .article-content {
+                font-size: 0.92rem;
+            }
+
+            .article-content h2 {
+                font-size: 1.45rem;
+
+                margin-top: 40px;
+            }
+
+            .article-footer {
+                flex-direction: column;
+
+                align-items: flex-start;
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+<header class="site-header">
+
+    <nav class="navbar">
+
+        <a href="index.html" class="logo">
+            Prince<span>.</span>
+        </a>
+
+        <div class="nav-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="about.html">
+                About
+            </a>
+
+            <a href="services.html">
+                Services
+            </a>
+
+            <a href="blog.html" class="active">
+                Blog
+            </a>
+
+            <a href="contect.html">
+                Contact
+            </a>
+
+        </div>
+
+    </nav>
+
+</header>
+
+
+<main>
+
+
+    <section class="article-header">
+
+        <span class="category">
+
+            <i class="fa-solid fa-code"></i>
+
+            WEB DEVELOPMENT
+
+        </span>
+
+
+        <h1>
+
+            Understanding
+
+            <span>
+                Web Development Trends
+            </span>
+
+            in 2024
+
+        </h1>
+
+
+        <p class="article-intro">
+
+            The web development landscape is constantly changing.
+            Let's explore the technologies, ideas and trends that
+            are shaping the way modern websites and applications
+            are built.
+
+        </p>
+
+
+        <div class="article-meta">
+
+            <span>
+
+                <i class="fa-regular fa-calendar"></i>
+
+                December 29, 2024
+
+            </span>
+
+
+            <span>
+
+                <i class="fa-regular fa-clock"></i>
+
+                6 min read
+
+            </span>
+
+
+            <span>
+
+                <i class="fa-solid fa-user"></i>
+
+                Prince Tiwari
+
+            </span>
+
+        </div>
+
+    </section>
+
+
+    <div class="article-image">
+
+        <img
+            src="imageF/webdev.jpg"
+            alt="Web Development">
+
+    </div>
+
+
+    <article class="article-wrapper">
+
+        <div class="article-content">
+
+
+            <p>
+
+                Web development is an ever-evolving field.
+                Every year brings new technologies, frameworks
+                and development practices that change the way
+                developers build digital experiences.
+
+            </p>
+
+
+            <p>
+
+                For developers, keeping up with these changes
+                is important. Understanding current trends helps
+                us build websites that are faster, more accessible,
+                secure and enjoyable to use.
+
+            </p>
+
+
+            <h2>
+                1. AI and Machine Learning Integration
+            </h2>
+
+
+            <p>
+
+                Artificial intelligence is becoming an important
+                part of modern web applications. Developers are
+                using AI for chatbots, recommendation systems,
+                content generation, personalization and automation.
+
+            </p>
+
+
+            <p>
+
+                Instead of simply displaying static information,
+                websites can now understand user behaviour and
+                provide more personalized experiences.
+
+            </p>
+
+
+            <h2>
+                2. Serverless Architecture
+            </h2>
+
+
+            <p>
+
+                Serverless architecture allows developers to build
+                applications without directly managing traditional
+                servers.
+
+            </p>
+
+
+            <p>
+
+                Cloud platforms can automatically handle
+                infrastructure, scaling and resource management.
+                This allows developers to focus more on application
+                logic and less on server maintenance.
+
+            </p>
+
+
+            <h2>
+                3. Progressive Web Apps
+            </h2>
+
+
+            <p>
+
+                Progressive Web Apps combine the advantages of
+                websites and mobile applications.
+
+            </p>
+
+
+            <p>
+
+                PWAs can provide fast loading, offline capabilities,
+                notifications and app-like experiences while still
+                being accessible through a web browser.
+
+            </p>
+
+
+            <h2>
+                4. Dark Mode
+            </h2>
+
+
+            <p>
+
+                Dark mode has become extremely popular across
+                applications and websites.
+
+            </p>
+
+
+            <p>
+
+                Apart from providing a modern appearance, dark
+                interfaces can be more comfortable for users in
+                low-light environments.
+
+            </p>
+
+
+            <h2>
+                5. Motion UI and Microinteractions
+            </h2>
+
+
+            <p>
+
+                Modern websites are no longer completely static.
+                Small animations and microinteractions can make
+                interfaces feel more responsive and engaging.
+
+            </p>
+
+
+            <p>
+
+                Hover animations, loading states, transitions and
+                subtle movement can significantly improve the
+                overall user experience when used carefully.
+
+            </p>
+
+
+            <h2>
+                6. API-First Development
+            </h2>
+
+
+            <p>
+
+                APIs have become a fundamental part of modern
+                software development.
+
+            </p>
+
+
+            <p>
+
+                API-first development focuses on designing the
+                application's API early, making it easier for
+                different platforms and services to communicate
+                with each other.
+
+            </p>
+
+
+            <h2>
+                7. Performance and Mobile Optimization
+            </h2>
+
+
+            <p>
+
+                A beautiful website is not enough if it takes
+                too long to load.
+
+            </p>
+
+
+            <p>
+
+                Developers increasingly focus on image optimization,
+                efficient JavaScript, responsive layouts and
+                fast-loading interfaces to provide a better
+                experience across devices.
+
+            </p>
+
+
+            <h2>
+                8. Voice Search and Accessibility
+            </h2>
+
+
+            <p>
+
+                Voice search and accessibility are becoming more
+                important as users interact with technology in
+                different ways.
+
+            </p>
+
+
+            <p>
+
+                Developers should build websites that can be used
+                by as many people as possible, including users
+                who rely on assistive technologies.
+
+            </p>
+
+
+            <h2>
+                Conclusion
+            </h2>
+
+
+            <p>
+
+                Web development continues to evolve rapidly.
+                Technologies such as AI, serverless computing,
+                PWAs and modern UI techniques are changing how
+                developers create digital experiences.
+
+            </p>
+
+
+            <p>
+
+                The most important thing for a developer is not
+                simply following every trend, but understanding
+                which technologies actually improve the product
+                and the experience of its users.
+
+            </p>
+
+
+        </div>
+
+    </article>
+
+
+    <div class="article-footer">
+
+        <a
+            href="blog.html"
+            class="back-button">
+
+            <i class="fa-solid fa-arrow-left"></i>
+
+            Back to Blog
+
+        </a>
+
+
+        <p>
+            Thanks for reading.
+        </p>
+
+    </div>
+
+
+</main>
+
+
+<footer>
+
+    <p>
+        © 2026 Prince Tiwari. All Rights Reserved.
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>            font-size: clamp(1.8rem, 5vw, 2.5rem);
         }
 
         h2 {
