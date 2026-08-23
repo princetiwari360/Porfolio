@@ -7,21 +7,23 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
-    padding: 20px;
+    padding: 40px 20px;
 }
 
 .services {
-    display: flex;
-    justify-content: space-around;
-    gap: 20px;
-    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 25px;
 }
 
 .service-card {
+    width: 100%;
     background-color: white;
     border: 1px solid #ddd;
     border-radius: 10px;
-    width: 300px;
     padding: 20px;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -39,14 +41,15 @@ body {
     border-radius: 8px;
 }
 
-h3 {
+.service-card h3 {
     margin-top: 15px;
     color: #333;
 }
 
-p {
+.service-card p {
     margin-top: 10px;
     color: #666;
+    line-height: 1.6;
 }
 
 .coming-soon {
@@ -54,10 +57,32 @@ p {
     border-color: #f5c6cb;
 }
 
-.coming-soon h3 {
+.coming-soon h3,
+.coming-soon p {
     color: #721c24;
 }
 
-.coming-soon p {
-    color: #721c24;
+@media (max-width: 1000px) {
+    .services {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 25px 15px;
+    }
+
+    .services {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .service-card {
+        padding: 15px;
+    }
+
+    .service-image {
+        height: 220px;
+    }
 }
