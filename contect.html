@@ -1,42 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Send a Message</title>
-  <link rel="stylesheet" href="contect.css">
 
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <script type="text/javascript">
-        (function() {
-            emailjs.init({
-              publicKey: "wapaFyNkWceu3yWK6",
-            });
-        })();
-    </script>
-    <script src="script.js">
-        
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact Me</title>
+
+    <link rel="stylesheet" href="contect.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+    <script>
+        emailjs.init({
+            publicKey: "wapaFyNkWceu3yWK6"
+        });
     </script>
 </head>
+
 <body>
-  <div class="container">
-    <h1>Contact Me</h1>
-    <p>Fill out the form below to send me a message.</p>
+
+<div class="container">
+
+    <h1>
+        Contact Me
+    </h1>
+
+    <p>
+        Fill out the form below to send me a message.
+    </p>
+
     <form id="contact-form">
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" placeholder="Your Name" required id="Name">
-      
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" placeholder="Your Email" required id="email">
-      
-      <label for="message">Message:</label>
-      <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
-      
-      <button type="submit" >Send Message</button>
+
+        <label for="name">
+            Name:
+        </label>
+
+        <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Your Name"
+            required
+        >
+
+
+        <label for="email">
+            Email:
+        </label>
+
+        <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Your Email"
+            required
+        >
+
+
+        <label for="message">
+            Message:
+        </label>
+
+        <textarea
+            id="message"
+            name="message"
+            placeholder="Your Message"
+            rows="5"
+            required
+        ></textarea>
+
+
+        <button type="submit">
+            Send Message
+        </button>
+
     </form>
+
     <p id="response" class="hidden"></p>
-  </div>
-  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-  <script src="script.js"></script>
+
+</div>
+
+<script src="script.js"></script>
+
 </body>
 </html>
